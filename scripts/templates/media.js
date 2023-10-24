@@ -1,13 +1,19 @@
-function photographerTemplate(data) {
-    const { name, id, city, country, tagline, price, portrait } = data;
-    const picture = `assets/photographers/${portrait}`;
-    function getUserCardDOM() {
-        const article = document.createElement('article');
+function mediaTemplate(mediaData) {
+    const { title, image, video, likes, date, price} = mediaData;
+
+    let mediaImage = "";
+    let mediaVideo = "";
+    if (image.length > 0){
+        mediaImage = `assets/images/${mediaData.photographerId}/${image}`;
+    }else{
+        mediaVideo = `assets/images/${mediaData.photographerId}/${video}`;
+    }
+    
+    function getMediaCardDOM() {
         const figure = document.createElement('figure');
-        const img = document.createElement('img');
-        img.setAttribute('src', picture);
+        img.setAttribute('src', );
         img.setAttribute('alt', `Photo de ${name}`);
-        img.classList.add('round-image');
+        img.classList.add('round-image'); // Ajoutez la classe "round-image" à l'image
         const figcaption = document.createElement('figcaption');
         const h2 = document.createElement('h2');
         h2.textContent = name;
@@ -32,3 +38,11 @@ function photographerTemplate(data) {
     }
     return { name, id, city, country, tagline, price, picture, getUserCardDOM }
 }
+
+// function generateMediaHTML(media) {
+// if (media instanceof ImageMedia) {
+// return `<img src="${media.image}" alt="${media.title}">`;
+// } else if (media instanceof VideoMedia) {
+// return `<video controls><source src="${media.video}" type="video/mp4">Your browser does not support the video tag.</video>`;
+// }
+// }
