@@ -11,14 +11,24 @@
 
 <body>
   <header>
-    <img src="assets/images/logo.png" class="logo" />
+    <a href="index.html" id="home-link">
+      <img src="assets/images/logo.png" alt="Notre logo FishEye" class="logo" />
+    </a>
   </header>
   <main id="main">
-      <div class="photographer-nav-info">
-      </div>
-      <div class="photographer-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      </div>
+    <div class="photographer-nav-info">
+    </div>
+    <div class="photographer-header">
+      <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+    </div>
+    <div class="sort-by">
+      <label for="sort-select">Trier par:</label>
+      <select id="sort-select">
+        <option value="popularite">Popularité</option>
+        <option value="date">Date</option>
+        <option value="titre">Titre</option>
+      </select>
+    </div>
     <div class="media-container"></div>
   </main>
   <div id="contact_modal">

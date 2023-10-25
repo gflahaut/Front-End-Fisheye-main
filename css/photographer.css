@@ -1,4 +1,7 @@
-@import url("style.css");
+.logo {
+    height: 50px;
+    margin-left: 100px;
+}
 #contact_modal {
     display: none;
 }
@@ -11,11 +14,23 @@
 .round-image {
     width: 15em;
 }
-header{
-    display: flex;
-    flex-direction: column;
+.media-image, .media-video{
+    width: 30em;
+    height: 30em;
+    object-fit: cover;
 }
 
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+.media-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
 .contact_button {
     font-size: 20px;
     font-weight: bold;
