@@ -59,7 +59,7 @@
       <span class="photographer-info-price"></span>
     </footer>
   </main>
-  <div id="contact_modal" aria-hidden="true">
+  <div id="contact_modal" aria-hidden="true" class="d-none">
     <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription">
       <header>
         <h1 id="modalTitle" class="modal-title">Contactez-moi</h1>
@@ -92,7 +92,7 @@
 
           <label for="message" class="form-label">Message :</label>
           <textarea class="form-control" name="message" id="message" aria-labelledby="message"
-            aria-describedby="messageError" placeholder="Entrez votre message" cols="80" rows="10"></textarea>
+            aria-describedby="messageError" placeholder="Entrez votre message" cols="80" rows="10" required></textarea>
           <div id="messageError" class="invalid-feedback hidden">
             Veuillez renseigner un message
           </div>

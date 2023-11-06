@@ -16,8 +16,6 @@ const messageInput = document.getElementById('message');
  * @param {string} photographerName - Le nom du photographe à contacter.
  */
 function displayModal(photographerName) {
-
-    
     modalTitle.textContent ="";
     const modalHeaderTitle = document.createElement('span');
     const modalHeaderSubtitle = document.createElement('span');
@@ -28,9 +26,13 @@ function displayModal(photographerName) {
     body.classList.add('no-scroll');
     main.classList.add('overlay');
     header.classList.add('overlay');
-    modal.style.display = "flex";
-    closeButton.focus();
+    modal.classList.remove("d-none");
+    modal.classList.add("d-flex");
+    document.querySelector("#prenom").focus();
+    // closeButton.focus();
     modal.addEventListener('keydown', modalDisposalEvent);
+    // Gestionnaire d'événement pour fermer la modal
+    closeButton.addEventListener("click", closeModal);
 }
 
 /**
@@ -39,6 +41,7 @@ function displayModal(photographerName) {
 function closeModal() {
     modalDisposal();
     modal.removeEventListener('keydown', modalDisposalEvent);
+    closeButton.removeEventListener("click", closeModal);
 }
 
 /**
@@ -49,14 +52,16 @@ function modalDisposal() {
     body.classList.remove('no-scroll');
     main.classList.remove('overlay');
     header.classList.remove('overlay');
-    modal.style.display = "none";
+    modal.classList.remove("d-flex");
+    modal.classList.add("d-none");
     openButton.focus();
+    document.querySelector("form").reset();
 }
 
-/**
- * Gère l'événement de pression de la touche "Escape" pour fermer la boîte modale.
- * @param {KeyboardEvent} event - L'événement de touche.
- */
+// /**
+//  * Gère l'événement de pression de la touche "Escape" pour fermer la boîte modale.
+//  * @param {KeyboardEvent} event - L'événement de touche.
+//  */
 function modalDisposalEvent(event) {
     if (event.key === 'Escape') {
         modalDisposal();
@@ -70,7 +75,6 @@ function modalDisposalEvent(event) {
  */
 form.addEventListener('submit', (event) => {
     let valid = "";
-
     /**
      * Affiche un message d'erreur pour un champ donné.
      * @param {HTMLInputElement} input - Le champ d'entrée en cours de validation.
