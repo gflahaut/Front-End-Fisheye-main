@@ -21,13 +21,16 @@ function photographerTemplate(data) {
         // Créez un élément figure pour contenir l'image
         const figure = document.createElement('figure');
         figure.classList.add('photographer-section-figure');
+        figure.setAttribute('tabindex', '1');
 
-        // Ajoutez un gestionnaire d'événements au clic pour rediriger vers la page du photographe
-        figure.addEventListener('click', function() {
-            const photographerUrl = `/photographer.html?id=${id}`;
-            window.location.href = photographerUrl;
+         // Ajoutez un gestionnaire d'événements au clic pour rediriger vers la page du photographe
+         figure.addEventListener('click', function() {
+            window.location.href = `/photographer.html?id=${id}`;
         });
-
+        figure.addEventListener('keydown', function() {
+            window.location.href = `/photographer.html?id=${id}`;
+        });
+       
         // Créez un élément figcaption pour contenir le texte
         const figcaption = document.createElement('figcaption');
 
@@ -35,10 +38,18 @@ function photographerTemplate(data) {
         const h2 = document.createElement('h2');
         h2.textContent = name;
 
+        //Créez un éléments pour l'image
         const div = document.createElement('div');
         div.classList.add('image-wrapper');
-        figure.append(div, h2);
-        div.appendChild(img);
+
+        
+        // Créez un élément article pour contenir la figure
+        const article = document.createElement('article');
+        
+        
+       
+        
+        
 
         const h3 = document.createElement('h3');
         h3.textContent = `${city}, ${country}`;
@@ -49,12 +60,16 @@ function photographerTemplate(data) {
         const h5 = document.createElement('h5');
         h5.textContent = `${price}€/jour`;
 
-        figcaption.append(h3, h4, h5);
-        figure.appendChild(figcaption);
-
-        // Créez un élément article pour contenir la figure
-        const article = document.createElement('article');
-        article.appendChild(figure);
+        const divInformations = document.createElement('div');
+        divInformations.classList.add('index-infos-photographers');
+        
+     
+        article.append(figure, divInformations);
+        figure.append(div,figcaption);
+        div.appendChild(img);
+        figcaption.append(h2);
+        
+        divInformations.append(h3, h4, h5);
 
         return article;
     }
