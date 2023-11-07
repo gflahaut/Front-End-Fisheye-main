@@ -12,6 +12,7 @@ function photographerTemplate(data) {
      * @returns {HTMLElement} - Élément HTML représentant le photographe.
      */
     function getUserCardDOM() {
+
         // Créez un élément img pour la photo du photographe
         const img = document.createElement('img');
         img.setAttribute('src', `assets/photographers/${portrait}`);
@@ -21,7 +22,7 @@ function photographerTemplate(data) {
         // Créez un élément figure pour contenir l'image
         const figure = document.createElement('figure');
         figure.classList.add('photographer-section-figure');
-        figure.setAttribute('tabindex', '1');
+        figure.setAttribute('tabindex', '0');
 
          // Ajoutez un gestionnaire d'événements au clic pour rediriger vers la page du photographe
          figure.addEventListener('click', function() {
@@ -41,16 +42,12 @@ function photographerTemplate(data) {
         //Créez un éléments pour l'image
         const div = document.createElement('div');
         div.classList.add('image-wrapper');
+        div.setAttribute('data-photographer-name',`${name}`);
 
         
         // Créez un élément article pour contenir la figure
         const article = document.createElement('article');
-        
-        
-       
-        
-        
-
+     
         const h3 = document.createElement('h3');
         h3.textContent = `${city}, ${country}`;
 

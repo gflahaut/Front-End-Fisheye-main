@@ -18,6 +18,10 @@ h1 {
     margin-right: 100px;
 }
 
+.photographer-section-figure:hover{
+    background-color: #eae9e9;
+}
+
 .photographer-section-figure {
     overflow: hidden;
     margin: 0 auto;
@@ -81,11 +85,59 @@ h1 {
 }
 
 .photographer_section article img {
-    height: 10em;
-    width: 10em;
-    border-radius: 50%;
-    object-fit: fill;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center center;
 }
+
+.image-wrapper{
+    height: 20em;
+    width: 20em;
+    overflow: hidden;
+}
+
+.image-wrapper[data-photographer-name ="Mimi Keel"]{
+    clip-path: circle(35% at center);
+}
+.image-wrapper[data-photographer-name ="Mimi Keel"] img{
+    transform: scale(1.1) translateY(-23px);
+}
+
+.image-wrapper[data-photographer-name ="Ellie-Rose Wilkens"]{
+    clip-path: circle(35% at center);
+}
+.image-wrapper[data-photographer-name ="Ellie-Rose Wilkens"] img{
+    transform: scale(1.65) translateY(50px);
+}
+
+.image-wrapper[data-photographer-name ="Tracy Galindo"]{
+    clip-path: circle(35% at center);
+}
+.image-wrapper[data-photographer-name ="Tracy Galindo"] img{
+    transform: scale(0.90) translateY(5px) translateX(30px);
+}
+.image-wrapper[data-photographer-name ="Nabeel Bradford"]{
+    clip-path: circle(35% at center);
+}
+.image-wrapper[data-photographer-name ="Nabeel Bradford"] img{
+    transform: scale(0.8) translateY(-76px);
+}
+
+.image-wrapper[data-photographer-name ="Rhode Dubois"]{
+    clip-path: circle(35% at center);
+}
+.image-wrapper[data-photographer-name ="Rhode Dubois"] img{
+    transform: scale(2) translateY(50px);
+}
+
+.image-wrapper[data-photographer-name ="Marcel Nikolic"]{
+    clip-path: circle(35% at center);
+}
+.image-wrapper[data-photographer-name ="Marcel Nikolic"] img{
+    transform: scale(2) translateY(50px);
+}
+
 
 @media screen and (min-width: 1800px) {
     body{

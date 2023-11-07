@@ -1,24 +1,9 @@
-.logo {
-    height: 50px;
-    margin-left: 100px;
-}
-#contact_modal {
-    display: none;
+body {
+    font-family: "DM Sans", sans-serif;
+    margin: 0;
+    width: 1440px;
 }
 
-.photograph-header {
-    background-color: #FAFAFA;
-    height: 300px;
-    margin: 0 100px;
-}
-.round-image {
-    width: 15em;
-}
-.media-image, .media-video{
-    width: 30em;
-    height: 30em;
-    object-fit: cover;
-}
 
 header {
     display: flex;
@@ -26,33 +11,88 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 90px;
-}
-.media-container {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-}
-.contact_button {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    padding: 11px;
-    width: 170px;
-    height: 70px;
-    border: none;
-    background-color: #901C1C;
-    border-radius: 5px;
-    cursor: pointer;
+    padding-left: 3em;
 }
 
+.logo {
+    height: 50px;
+}
+
+h2 {
+    color: #901C1C;
+    font-weight: normal;
+}
+
+.likes {
+    font-weight: bold;
+}
+
+.fa-solid{
+    cursor: pointer;
+}
+.image-wrapper{
+    height: 20em;
+    width: 20em;
+    overflow: hidden;
+}
+
+.image-wrapper[data-photographer-name ="Mimi Keel"]{
+    clip-path: circle(35% at center);
+}
+.image-wrapper[data-photographer-name ="Mimi Keel"] img{
+    transform: scale(1.1) translateY(-23px);
+}
+
+.image-wrapper[data-photographer-name ="Ellie-Rose Wilkens"]{
+    clip-path: circle(35% at center);
+}
+.image-wrapper[data-photographer-name ="Ellie-Rose Wilkens"] img{
+    transform: scale(1.65) translateY(10px);
+}
+
+.image-wrapper[data-photographer-name ="Tracy Galindo"]{
+    clip-path: circle(35% at center);
+}
+.image-wrapper[data-photographer-name ="Tracy Galindo"] img{
+    transform: scale(0.90) translateY(5px) translateX(30px);
+}
+.image-wrapper[data-photographer-name ="Nabeel Bradford"]{
+    clip-path: circle(35% at center);
+}
+.image-wrapper[data-photographer-name ="Nabeel Bradford"] img{
+    transform: scale(0.8) translateY(10px);
+}
+
+.image-wrapper[data-photographer-name ="Rhode Dubois"]{
+    clip-path: circle(35% at center);
+}
+.image-wrapper[data-photographer-name ="Rhode Dubois"] img{
+    transform: scale(2) translateY(15px);
+}
+
+.image-wrapper[data-photographer-name ="Marcel Nikolic"]{
+    clip-path: circle(35% at center);
+}
+.image-wrapper[data-photographer-name ="Marcel Nikolic"] img{
+    transform: scale(2) translateY(40px);
+}
+
+/* --------------------------------------------------------------------------------modal--------------------------------------------------------------------------------------- */
+#contact_modal {
+    position: absolute;
+    top: 0;
+    width: 1440px;
+    height: 100vh;
+}
 .modal {
     border-radius: 5px;
-    background-color: #DB8876;
-    width: 50%;
+    background-color: #D3573C;
+    width: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 35px;
+    justify-content: center;
+    padding: 0 35px 35px 35px;
     margin: auto;
 }
 
@@ -65,10 +105,267 @@ header {
     cursor: pointer;
 }
 
-.modal header h2 {
-    font-size: 64px;
+.modal header h1 {
     font-weight: normal;
+    text-align: start;
+    font-size: 35px;
+    margin: 0;
+}
+
+#modalTitle{
+    display: flex;
+    flex-direction: column;
+    margin: 2em 0 2em 0;
+}
+
+.modal-title, form label, .invalid-border, .invalid-feedback, .form-legend{
+    font-size: 15px;
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.close-modal-btn,
+.close-modal-icon {
+   margin: 0;
+}
+
+.close-modal-icon {
+    width: 70%;
+    height: 100%;
+}
+
+.close-modal-btn:hover {
+    opacity: 0.7;
+}
+/* -------------------------------------------------------------------------------- fin modal--------------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------------- Lightbox --------------------------------------------------------------------------------------- */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .lightbox-content {
+    background: #fff;
+    width: 1110px;
+    height: 900px;
+    padding: 20px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .lightbox-content > figure {
+    margin: 0;
+  }
+
+  .lightbox-content i {
+    font-size: 40px;
+    color: #901C1C;
+  }
+
+  .lightbox-content > figure > div > img {
+    width: 800px;
+    height: 800px;
+    object-fit: cover;
+  }
+  .lightbox-content > figure > div > video {
+    width: 800px;
+    height: 800px;
+    object-fit: cover;
+  }
+  .arrow-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .arrow-container i{
+    padding: 0.5em;
+  }
+  .close-icon-container{
+    width: 915px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+  }
+  .lightbox-figcaption{
+    display: flex;
+  }
+  .lightbox-h2{
+    margin-left: 2.6em;
+  }
+/* -------------------------------------------------------------------------------- fin Lightbox--------------------------------------------------------------------------------------- */
+
+.photographer-header {
+    background-color: #FAFAFA;
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    padding-left: 6em;
+}
+
+.photographer-header-infos,
+.btn-container,
+.image-container,
+.image-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-container {
+    align-items: center;
+}
+
+.photographer-header-name,
+.photographer-header-country,
+.photographer-header-tagline {
+    grid-column: 1;
+}
+
+.image-container {
+    grid-column: 3;
+}
+
+.round-image {
+    height: 10em;
+    width: 10em;
+    border-radius: 50%;
+    object-fit: fill;
+}
+
+.media-image,
+.media-video {
+    width: 20em;
+    height: 20em;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.media-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.fas,
+.photographer-info-price,
+.likes {
+    margin-left: 0.5em;
+}
+
+.contact_button{
+    width: 10em;
+    height: 3em;
+    grid-column: 2;
+    font-weight: bold;
+    margin: auto;
+}
+
+.contact_button,
+.sort-select-options-buttons{
+    color: white;
+    padding: 11px;
+    border: none;
+    background-color: #901C1C;
+    cursor: pointer;
+}
+
+.contact_button,
+.sort-select-options-buttons {
+    border-radius: 5px;
+}
+
+#sort-select-options{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; 
+    width: 7em;
+}
+
+.sort-select-options-buttons {
+    text-align: left;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+
+.contact_button:hover,
+.contact_button:focus, 
+.sort-select-button:hover,
+.sort-select-button:focus,
+.sort-select-options-buttons:focus,
+.sort-select-options-buttons:hover{
+    background-color: #D3573C;
+    color:black;
+}
+
+.sort-select-button {
+    padding: 12px 16px;
+    border: none;
+    cursor: pointer;
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    background-color: #901C1C;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sort-by {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 10vw;
+    padding-left: 3em;
+    margin-top: 3em;
+}
+
+#sort-select-label{
+    grid-column: 1;
+    grid-row: 1;
+    white-space: nowrap;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    overflow: auto;
+    border-top: 1px solid #ddd;
+    z-index: 1;
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+}
+
+.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.d-none{
+    display: none;
+}
+
+.d-flex{
+    display: flex;
 }
 
 form {
@@ -79,8 +376,8 @@ form {
 }
 
 form label {
-    color: #312E2E;
-    font-size: 36px;
+    color: #000;
+    margin: 0.2em;
 }
 
 form div {
@@ -96,4 +393,64 @@ form input {
     height: 68px;
     border: none;
     border-radius: 5px;
+}
+
+textarea.form-control{
+    width: inherit;
+    margin-bottom: 2em;
+}
+
+.overlay {
+    opacity: 0.6;
+}
+
+.hidden {
+    height: 1px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: -10000px;
+    width: 1px;
+}
+
+
+article>figure>figcaption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20em;
+    cursor: pointer;
+}
+
+.media-likes-container {
+    color: #901C1C;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.media-likes-container.liked {
+    color: #D3573C;
+}
+
+.footer-rectangulaire {
+    background-color: #D3573C;
+    color: black;
+    font-weight: bold;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    width: 200px;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: center;
+}
+.invalid-border, .invalid-feedback{
+    color: #901C1C;
+    border: 2px #901C1C;
+}
+@media screen and (min-width: 1800px) {
+    body{
+        margin: auto;
+    }
 }

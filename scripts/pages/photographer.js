@@ -28,29 +28,18 @@ const photographer = onePhotographer.photographers[0];
 // Sélectionnez l'élément où afficher les informations du photographe
 const photographerName = document.querySelector(".photographer-header-name");
 photographerName.textContent = photographer.name;
-const photographerCountry = document.querySelector(
-  ".photographer-header-country"
-);
+const photographerCountry = document.querySelector(".photographer-header-country");
 photographerCountry.textContent = `${photographer.city}, ${photographer.country}`;
-const photographerTagline = document.querySelector(
-  ".photographer-header-tagline"
-);
+const photographerTagline = document.querySelector(".photographer-header-tagline");
 photographerTagline.textContent = photographer.tagline;
+const photographerImageContainer = document.querySelector(".image-wrapper");
+photographerImageContainer.setAttribute('data-photographer-name',`${photographer.name}`);
 const photographerImage = document.querySelector("#photographer-header-image");
-photographerImage.setAttribute(
-  "src",
-  `../assets/photographers/${photographer.portrait}`
-);
+photographerImage.setAttribute("src",`../assets/photographers/${photographer.portrait}`);
 photographerImage.setAttribute("alt", `${photographer.name}`);
-photographerImage.classList.add("round-image");
-const photographerInfoPrice = document.querySelector(
-  ".photographer-info-price"
-);
+const photographerInfoPrice = document.querySelector(".photographer-info-price");
 photographerInfoPrice.innerHTML = `${photographer.price}€ / jour`;
-
-const photographerInfoLikes = document.querySelector(
-  ".photographer-info-likes"
-);
+const photographerInfoLikes = document.querySelector(".photographer-info-likes");
 
 document.querySelector(".sort-select-button").addEventListener("click", function () {
   toggleSortDropdown();
@@ -72,6 +61,7 @@ document.querySelector(".sort-select-button").addEventListener("keydown", functi
 function calculateTotalLikes(mediaList) {
   return mediaList.reduce((acc, current) => acc + current.likes, 0);
 }
+
 photographerInfoLikes.innerHTML = calculateTotalLikes(onePhotographer.media);
 
 const openButton = document.querySelector(".open-modal-btn");
@@ -116,26 +106,6 @@ function compareTitles(a, b) {
   // Utilise localeCompare pour comparer les titres
   return a.toLowerCase().localeCompare(b.toLowerCase());
 }
-// Sélectionnez l'élément de sélection pour trier les médias
-// const sortSelect = document.getElementById("sort-select-button");
-// const sortSelectOptions = document.getElementById("sort-select-options");
-
-// /**
-//  * Gère l'ouverture et la fermeture de la liste déroulante en fonction de l'attribut "hidden".
-//  */
-// function selectDropdown() {
-//   if (sortSelectOptions.hasAttribute("hidden")) {
-//     // Ouvrir la liste
-//     sortSelectOptions.removeAttribute("hidden");
-//     sortSelect.setAttribute("aria-expanded", "true");
-//   } else {
-//     // Fermer la liste
-//     sortSelectOptions.setAttribute("hidden", "true");
-//     sortSelect.setAttribute("aria-expanded", "false");
-//   }
-// }
-// // Attache un gestionnaire d'événements pour le clic sur l'élément sortSelect
-// sortSelect.addEventListener("click", selectDropdown);
 
 // Sélectionnez tous les boutons d'option de tri
 const sortOptionButtons = document.querySelectorAll('button[role="option"]');
@@ -548,7 +518,7 @@ function setModalTabulationBehavior(event, focusableElements){
        // Si ce n'est pas le premier élément, trouve l'indice de l'élément actif et passe au précédent.
       const currentIndex = Array.from(focusableElements).indexOf(document.activeElement);
       // Si on atteint le début de la liste, reboucle vers le dernier élément.
-      const previousIndex = currentIndex - 1 < 0 ? focusableElements.length - 1 : currentIndex - 1;
+      const previousIndex = currentIndex - 1 < 0 ? focusableElements.length - 1 : currentIndex - 1; 
        // Met le focus sur l'élément précédent.
       focusableElements[previousIndex].focus();
     }
