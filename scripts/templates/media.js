@@ -4,7 +4,6 @@
  * @returns {Object} - Un objet contenant des propriétés et une méthode pour générer le DOM du média.
  */
 function mediaTemplate(mediaData) {
-    console.log(mediaData);
      // Extrait les données du média
      const { id, title, image, video, likes, date, price } = mediaData;
      let mediaImage = "";
