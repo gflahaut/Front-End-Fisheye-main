@@ -21,60 +21,78 @@ header {
 h2 {
     color: #901C1C;
     font-weight: normal;
+    color: #901C1C;
+    font-weight: normal;
+    font-size: xx-large;
 }
 
 .likes {
     font-weight: bold;
+    font-size: xx-large;
 }
 
-.fa-solid{
+.fa-solid {
     cursor: pointer;
 }
-.image-wrapper{
+
+.fa-solid,
+.fas {
+    font-weight: 900;
+    font-size: xx-large;
+}
+
+.image-wrapper {
     height: 20em;
     width: 20em;
     overflow: hidden;
 }
 
-.image-wrapper[data-photographer-name ="Mimi Keel"]{
-    clip-path: circle(35% at center);
-}
-.image-wrapper[data-photographer-name ="Mimi Keel"] img{
-    transform: scale(1.1) translateY(-23px);
+.image-wrapper[data-photographer-name="Mimi Keel"] {
+    clip-path: circle(46% at center);
 }
 
-.image-wrapper[data-photographer-name ="Ellie-Rose Wilkens"]{
-    clip-path: circle(35% at center);
-}
-.image-wrapper[data-photographer-name ="Ellie-Rose Wilkens"] img{
-    transform: scale(1.65) translateY(10px);
+.image-wrapper[data-photographer-name="Mimi Keel"] img {
+    transform: scale(1.9) translateY(-8px);
 }
 
-.image-wrapper[data-photographer-name ="Tracy Galindo"]{
-    clip-path: circle(35% at center);
-}
-.image-wrapper[data-photographer-name ="Tracy Galindo"] img{
-    transform: scale(0.90) translateY(5px) translateX(30px);
-}
-.image-wrapper[data-photographer-name ="Nabeel Bradford"]{
-    clip-path: circle(35% at center);
-}
-.image-wrapper[data-photographer-name ="Nabeel Bradford"] img{
-    transform: scale(0.8) translateY(10px);
+.image-wrapper[data-photographer-name="Ellie-Rose Wilkens"] {
+    clip-path: circle(46% at center);
 }
 
-.image-wrapper[data-photographer-name ="Rhode Dubois"]{
-    clip-path: circle(35% at center);
-}
-.image-wrapper[data-photographer-name ="Rhode Dubois"] img{
-    transform: scale(2) translateY(15px);
+.image-wrapper[data-photographer-name="Ellie-Rose Wilkens"] img {
+    transform: scale(2.3) translateY(10px);
 }
 
-.image-wrapper[data-photographer-name ="Marcel Nikolic"]{
-    clip-path: circle(35% at center);
+.image-wrapper[data-photographer-name="Tracy Galindo"] {
+    clip-path: circle(46% at center);
 }
-.image-wrapper[data-photographer-name ="Marcel Nikolic"] img{
-    transform: scale(2) translateY(40px);
+
+.image-wrapper[data-photographer-name="Tracy Galindo"] img {
+    transform: scale(1.1) translateY(5px) translateX(30px);
+}
+
+.image-wrapper[data-photographer-name="Nabeel Bradford"] {
+    clip-path: circle(46% at center);
+}
+
+.image-wrapper[data-photographer-name="Nabeel Bradford"] img {
+    transform: scale(1.4) translateY(10px);
+}
+
+.image-wrapper[data-photographer-name="Rhode Dubois"] {
+    clip-path: circle(46% at center);
+}
+
+.image-wrapper[data-photographer-name="Rhode Dubois"] img {
+    transform: scale(2.5) translateY(15px);
+}
+
+.image-wrapper[data-photographer-name="Marcel Nikolic"] {
+    clip-path: circle(46% at center);
+}
+
+.image-wrapper[data-photographer-name="Marcel Nikolic"] img {
+    transform: scale(2.9) translateY(40px);
 }
 
 /* --------------------------------------------------------------------------------modal--------------------------------------------------------------------------------------- */
@@ -84,6 +102,7 @@ h2 {
     width: 1440px;
     height: 100vh;
 }
+
 .modal {
     border-radius: 5px;
     background-color: #D3573C;
@@ -112,13 +131,17 @@ h2 {
     margin: 0;
 }
 
-#modalTitle{
+#modalTitle {
     display: flex;
     flex-direction: column;
     margin: 2em 0 2em 0;
 }
 
-.modal-title, form label, .invalid-border, .invalid-feedback, .form-legend{
+.modal-title,
+form label,
+.invalid-border,
+.invalid-feedback,
+.form-legend {
     font-size: 15px;
 }
 
@@ -131,7 +154,7 @@ h2 {
 
 .close-modal-btn,
 .close-modal-icon {
-   margin: 0;
+    margin: 0;
 }
 
 .close-modal-icon {
@@ -142,6 +165,7 @@ h2 {
 .close-modal-btn:hover {
     opacity: 0.7;
 }
+
 /* -------------------------------------------------------------------------------- fin modal--------------------------------------------------------------------------------------- */
 
 /* -------------------------------------------------------------------------------- Lightbox --------------------------------------------------------------------------------------- */
@@ -155,9 +179,9 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .lightbox-content {
+}
+
+.lightbox-content {
     background: #fff;
     width: 1110px;
     height: 900px;
@@ -167,47 +191,69 @@ h2 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
+}
 
-  .lightbox-content > figure {
+.lightbox-content>figure {
     margin: 0;
-  }
+}
 
-  .lightbox-content i {
+.lightbox-content i {
     font-size: 40px;
     color: #901C1C;
-  }
+}
 
-  .lightbox-content > figure > div > img {
+.lightbox-content > figure > div > img {
     width: 800px;
     height: 800px;
     object-fit: cover;
-  }
-  .lightbox-content > figure > div > video {
+}
+
+.lightbox-content > figure > div > video {
     width: 800px;
     height: 800px;
     object-fit: cover;
-  }
-  .arrow-container{
+}
+
+.arrow-container {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .arrow-container i{
+}
+
+.arrow-container i {
     padding: 0.5em;
-  }
-  .close-icon-container{
+}
+
+.close-icon-container {
     width: 915px;
     display: flex;
     justify-content: end;
     align-items: end;
-  }
-  .lightbox-figcaption{
+}
+
+.lightbox-figcaption {
     display: flex;
-  }
-  .lightbox-h2{
+}
+
+.lightbox-h2 {
     margin-left: 2.6em;
-  }
+}
+
+@media screen and (max-width: 1400px) {
+    .lightbox-content{
+        height: 700px;
+    }
+    .lightbox-content > figure > div > img {
+        width: 700px;
+        height: 700px;
+    }
+    
+    .lightbox-content > figure > div > video {
+        width: 700px;
+        height: 700px;
+    }
+}
+
 /* -------------------------------------------------------------------------------- fin Lightbox--------------------------------------------------------------------------------------- */
 
 .photographer-header {
@@ -236,6 +282,23 @@ h2 {
     grid-column: 1;
 }
 
+h1.photographer-header-name {
+    font-size: xxx-large;
+    color: #D3573C;
+    font-weight: 500;
+    margin: 0;
+}
+
+span.photographer-header-country {
+    font-size: xx-large;
+    color: #901C1C;
+}
+
+span.photographer-header-tagline {
+    font-size: x-large;
+    color: #757575
+}
+
 .image-container {
     grid-column: 3;
 }
@@ -249,8 +312,8 @@ h2 {
 
 .media-image,
 .media-video {
-    width: 20em;
-    height: 20em;
+    width: 30em;
+    height: 30em;
     object-fit: cover;
     cursor: pointer;
 }
@@ -266,16 +329,17 @@ h2 {
     margin-left: 0.5em;
 }
 
-.contact_button{
+.contact_button {
     width: 10em;
     height: 3em;
     grid-column: 2;
     font-weight: bold;
     margin: auto;
+    font-size: 1.5em;
 }
 
 .contact_button,
-.sort-select-options-buttons{
+.sort-select-options-buttons {
     color: white;
     padding: 11px;
     border: none;
@@ -288,11 +352,11 @@ h2 {
     border-radius: 5px;
 }
 
-#sort-select-options{
+#sort-select-options {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     width: 7em;
 }
 
@@ -301,16 +365,18 @@ h2 {
     display: block;
     width: 100%;
     border-bottom: 1px solid white;
+    font-size: larger;
+    font-weight: 600;
 }
 
 .contact_button:hover,
-.contact_button:focus, 
+.contact_button:focus,
 .sort-select-button:hover,
 .sort-select-button:focus,
 .sort-select-options-buttons:focus,
-.sort-select-options-buttons:hover{
+.sort-select-options-buttons:hover {
     background-color: #D3573C;
-    color:black;
+    color: black;
 }
 
 .sort-select-button {
@@ -336,10 +402,12 @@ h2 {
     margin-top: 3em;
 }
 
-#sort-select-label{
+#sort-select-label {
     grid-column: 1;
     grid-row: 1;
     white-space: nowrap;
+    font-weight: bold;
+    font-size: 1.5em;
 }
 
 .dropdown-content {
@@ -360,11 +428,11 @@ h2 {
     align-items: center;
 }
 
-.d-none{
+.d-none {
     display: none;
 }
 
-.d-flex{
+.d-flex {
     display: flex;
 }
 
@@ -395,7 +463,7 @@ form input {
     border-radius: 5px;
 }
 
-textarea.form-control{
+textarea.form-control {
     width: inherit;
     margin-bottom: 2em;
 }
@@ -418,7 +486,7 @@ article>figure>figcaption {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 20em;
+    width: 30em;
     cursor: pointer;
 }
 
@@ -444,13 +512,17 @@ article>figure>figcaption {
     border-radius: 5px 5px 0 0;
     display: flex;
     justify-content: center;
+    font-size: larger;
 }
-.invalid-border, .invalid-feedback{
+
+.invalid-border,
+.invalid-feedback {
     color: #901C1C;
     border: 2px #901C1C;
 }
+
 @media screen and (min-width: 1800px) {
-    body{
+    body {
         margin: auto;
     }
 }

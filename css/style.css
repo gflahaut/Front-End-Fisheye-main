@@ -4,21 +4,31 @@ body {
     width: 1440px;
 }
 
-
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
+    height: 100px;
+
 }
 
 h1 {
     color: #901C1C;
-    margin-right: 100px;
+    font-size: xxx-large;
+    font-weight: 500;
+    padding-top: 1em;
 }
 
-.photographer-section-figure:hover{
+main{
+    margin: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photographer-section-figure:hover {
     background-color: #eae9e9;
 }
 
@@ -45,14 +55,25 @@ h1 {
 }
 
 .logo {
-    height: 50px;
-    margin-left: 100px;
+    padding-top: 2em;
+    height: 70px;
+}
+
+.index-infos-photographers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.index-infos-photographers>* {
+    margin: 0;
 }
 
 .photographer_section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 70px;
+    gap: 200px;
     margin-top: 100px;
 }
 
@@ -66,22 +87,25 @@ h1 {
 
 .photographer_section article h2 {
     color: #D3573C;
-    font-size: 36px;
+    font-size: 60px;
+    font-weight: 300;
 }
 
 .photographer_section article h3 {
     color: #901C1C;
-    font-size: 13px;
+    font-size: 24px;
+    font-weight: 300;
 }
+
 
 .photographer_section article h4 {
     color: #000000;
-    font-size: 10px;
+    font-size: 16px;
 }
 
 .photographer_section article h5 {
     color: #757575;
-    font-size: 9px;
+    font-size: 16px;
 }
 
 .photographer_section article img {
@@ -91,56 +115,48 @@ h1 {
     object-position: center center;
 }
 
-.image-wrapper{
+.image-wrapper {
     height: 20em;
     width: 20em;
     overflow: hidden;
 }
 
-.image-wrapper[data-photographer-name ="Mimi Keel"]{
-    clip-path: circle(35% at center);
-}
-.image-wrapper[data-photographer-name ="Mimi Keel"] img{
-    transform: scale(1.1) translateY(-23px);
+.image-wrapper {
+    clip-path: circle(50% at center);
 }
 
-.image-wrapper[data-photographer-name ="Ellie-Rose Wilkens"]{
-    clip-path: circle(35% at center);
-}
-.image-wrapper[data-photographer-name ="Ellie-Rose Wilkens"] img{
-    transform: scale(1.65) translateY(50px);
+.image-wrapper[data-photographer-name="Mimi Keel"] img {
+    transform: scale(1.5) translateY(-23px);
 }
 
-.image-wrapper[data-photographer-name ="Tracy Galindo"]{
-    clip-path: circle(35% at center);
-}
-.image-wrapper[data-photographer-name ="Tracy Galindo"] img{
-    transform: scale(0.90) translateY(5px) translateX(30px);
-}
-.image-wrapper[data-photographer-name ="Nabeel Bradford"]{
-    clip-path: circle(35% at center);
-}
-.image-wrapper[data-photographer-name ="Nabeel Bradford"] img{
-    transform: scale(0.8) translateY(-76px);
+.image-wrapper[data-photographer-name="Ellie-Rose Wilkens"] img {
+    transform: scale(2.5) translateY(50px);
 }
 
-.image-wrapper[data-photographer-name ="Rhode Dubois"]{
-    clip-path: circle(35% at center);
-}
-.image-wrapper[data-photographer-name ="Rhode Dubois"] img{
-    transform: scale(2) translateY(50px);
+.image-wrapper[data-photographer-name="Tracy Galindo"] img {
+    transform: scale(1.2) translateY(0px) translateX(15px);
 }
 
-.image-wrapper[data-photographer-name ="Marcel Nikolic"]{
-    clip-path: circle(35% at center);
+.image-wrapper[data-photographer-name="Nabeel Bradford"] img {
+    transform: scale(1) translateY(-76px);
 }
-.image-wrapper[data-photographer-name ="Marcel Nikolic"] img{
-    transform: scale(2) translateY(50px);
+
+.image-wrapper[data-photographer-name="Rhode Dubois"] img {
+    transform: scale(2.5) translateY(50px);
 }
+
+.image-wrapper[data-photographer-name="Marcel Nikolic"] img {
+    transform: scale(2.5) translateY(50px);
+}
+
 
 
 @media screen and (min-width: 1800px) {
-    body{
-        margin: auto;
-    }
+        body {
+            margin: auto;
+        }
+        header{
+            width: auto;
+        }
 }
+
