@@ -239,7 +239,7 @@ form label,
     margin-left: 2.6em;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1900px) {
     .lightbox-content{
         height: 700px;
     }
