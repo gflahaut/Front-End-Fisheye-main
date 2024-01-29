@@ -28,8 +28,10 @@ function photographerTemplate(data) {
          figure.addEventListener('click', function() {
             window.location.href = `/photographer.html?id=${id}`;
         });
-        figure.addEventListener('keydown', function() {
-            window.location.href = `/photographer.html?id=${id}`;
+        figure.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                window.location.href = `/photographer.html?id=${id}`;
+            }
         });
        
         // Créez un élément figcaption pour contenir le texte

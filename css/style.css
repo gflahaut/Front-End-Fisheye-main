@@ -153,10 +153,14 @@ main{
 
 @media screen and (min-width: 1800px) {
         body {
-            margin: auto;
+            width: 80%;
+            margin: 0 auto; /* Centre le contenu */
         }
         header{
             width: auto;
         }
 }
-
+figure > div > img {
+    width: 700px;
+    height: 700px;
+}

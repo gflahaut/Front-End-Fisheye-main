@@ -76,7 +76,7 @@
           <img class="close-modal-icon" src="assets/icons/close.svg" alt="Fermer la modale" />
         </button>
       </header>
-      <form method="post" action="">
+      <form>
           <legend class="form-legend hidden">Vos coordonnées</legend>
           <label for="prenom" class="form-label">Prénom :</label>
           <input type="text" class="form-control" name="prenom" id="prenom" aria-labelledby="prenom"
@@ -105,8 +105,11 @@
           <div id="messageError" class="invalid-feedback hidden">
             Veuillez renseigner un message
           </div>
-        <button class="contact_button" type="submit">Envoyer</button>
+        <button class="contact_button" type="button">Envoyer</button>
       </form>
+      <div class="success-message d-none">
+        Votre message a été envoyé avec succès !
+      </div>
     </div>
   </div>
   <script src="scripts/templates/media.js"></script>

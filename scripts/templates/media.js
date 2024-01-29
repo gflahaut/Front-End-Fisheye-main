@@ -4,7 +4,6 @@
  * @returns {Object} - Un objet contenant des propriétés et une méthode pour générer le DOM du média.
  */
 function mediaTemplate(mediaData) {
-    console.log(mediaData);
      // Extrait les données du média
      const { id, title, image, video, likes, date, price } = mediaData;
      let mediaImage = "";
@@ -67,6 +66,7 @@ function mediaTemplate(mediaData) {
         function generateMediaHTML(mediaImage, mediaVideo) {
             if (mediaImage.length > 0) {
                 const img = document.createElement('img');
+                img.setAttribute('tabindex', '0');
                 img.setAttribute('src', mediaImage);
                 img.setAttribute('alt', title);
                 img.classList.add('media-image');
@@ -75,15 +75,12 @@ function mediaTemplate(mediaData) {
             }
             if (mediaVideo.length > 0) {
                 const video = document.createElement('video');
+                video.setAttribute('tabindex', '0');
                 video.setAttribute('controls', '');
                 video.classList.add('media-video');
                 video.setAttribute('alt', title);
-
-                // Utilisez un objet de données pour stocker les informations sur la vidéo
                 video.dataset.itemprop = 'name';
                 video.dataset.content = title;
-
-                // Utilisez un élément source pour spécifier le type de vidéo et la source
                 const source = document.createElement('source');
                 source.setAttribute('type', 'video/mp4');
                 source.setAttribute('src', mediaVideo);
@@ -94,7 +91,9 @@ function mediaTemplate(mediaData) {
             }
         }
         generateMediaHTML(mediaImage, mediaVideo);
+       
         figure.classList.add('lightbox');
+        
         
 
         article.appendChild(figure);

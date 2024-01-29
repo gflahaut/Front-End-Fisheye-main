@@ -166,6 +166,13 @@ form label,
     opacity: 0.7;
 }
 
+.success-message{
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+}
+
 /* -------------------------------------------------------------------------------- fin modal--------------------------------------------------------------------------------------- */
 
 /* -------------------------------------------------------------------------------- Lightbox --------------------------------------------------------------------------------------- */
@@ -241,7 +248,8 @@ form label,
 
 @media screen and (max-width: 1900px) {
     .lightbox-content{
-        height: 700px;
+        width: 80%;
+        margin: 0 auto;
     }
     .lightbox-content > figure > div > img {
         width: 700px;
@@ -252,6 +260,8 @@ form label,
         width: 700px;
         height: 700px;
     }
+
+    
 }
 
 /* -------------------------------------------------------------------------------- fin Lightbox--------------------------------------------------------------------------------------- */
@@ -457,15 +467,17 @@ form div {
 }
 
 form input {
-    width: 100%;
+    width: 95%;
     height: 68px;
     border: none;
     border-radius: 5px;
+    padding-left: 1em;
 }
 
 textarea.form-control {
-    width: inherit;
+    width: 95%;
     margin-bottom: 2em;
+    padding-left: 1em;
 }
 
 .overlay {
