@@ -281,17 +281,16 @@ function setLightboxContent(origin, lightboxDataIndex) {
   // vérifie si l'index de l'image actuellement affichée dans la lightbox (lightboxDataIndex) est supérieur à 0. 
   //Elle permet de déterminer si l'image actuelle n'est pas la première image dans la liste des médias du photographe.
   //selon la réponse à la condition affiche ou non l'icone gauche.
-  if (lightboxDataIndex > 0) {
-    const iconLeft = document.createElement("i");
-    iconLeft.setAttribute("tabIndex", "0");
-    iconLeft.classList.add('lightbox',"fa-solid", "fa-chevron-left");
-    figureContainer.appendChild(iconLeft);
+  const iconLeft = document.createElement("i");
+  iconLeft.setAttribute("tabIndex", "0");
+  iconLeft.classList.add('lightbox',"fa-solid", "fa-chevron-left");
+  if (lightboxDataIndex == 0) iconLeft.classList.add('v-hidden');
+  figureContainer.appendChild(iconLeft);
 
-    // Gestionnaire pour passer à la média précédente
-    iconLeft.addEventListener("click", (event) => {
-      setLightboxContent("left-arrow", lightboxDataIndex - 1);
-    });
-  }
+  // Gestionnaire pour passer à la média précédente
+  iconLeft.addEventListener("click", (event) => {
+    setLightboxContent("left-arrow", lightboxDataIndex - 1);
+  });
 
   if(lightboxData.image){
     const image = document.createElement("img");
@@ -316,17 +315,16 @@ function setLightboxContent(origin, lightboxDataIndex) {
   //vérifie si l'index de l'image actuellement affichée dans la lightbox (lightboxDataIndex) est inférieur à l'index du dernier média disponible. 
   //elle permet de déterminer si l'image actuelle n'est pas la dernière image dans la liste des médias du photographe.
   //selon la réponse à la condition affiche ou non l'icone droite.
-  if (lightboxDataIndex < onePhotographer.media.length - 1) {
-    const iconRight = document.createElement("i");
-    iconRight.setAttribute("tabIndex", "0");
-    iconRight.classList.add('lightbox', "fa-solid", "fa-chevron-right");
-    figureContainer.appendChild(iconRight);
+  const iconRight = document.createElement("i");
+  iconRight.setAttribute("tabIndex", "0");
+  iconRight.classList.add('lightbox', "fa-solid", "fa-chevron-right");
+  if(lightboxDataIndex == onePhotographer.media.length - 1) iconRight.classList.add("v-hidden");
+  figureContainer.appendChild(iconRight);
 
-    // Gestionnaire pour passer à la média suivante
-    iconRight.addEventListener("click", (event) => {
-      setLightboxContent("right-arrow", lightboxDataIndex + 1);
-    });
-  }
+  // Gestionnaire pour passer à la média suivante
+  iconRight.addEventListener("click", (event) => {
+    setLightboxContent("right-arrow", lightboxDataIndex + 1);
+  });
 
   // Crée un conteneur pour l'icône de fermeture
   const closeIconContainer = document.createElement("span");

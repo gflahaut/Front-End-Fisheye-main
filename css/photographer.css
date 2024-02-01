@@ -4,6 +4,9 @@ body {
     width: 1440px;
 }
 
+.v-hidden{
+    visibility: hidden;
+}
 
 header {
     display: flex;
@@ -248,20 +251,22 @@ form label,
 
 @media screen and (max-width: 1900px) {
     .lightbox-content{
-        width: 80%;
+        height: 85vh;
+        width: 85vh;
         margin: 0 auto;
     }
     .lightbox-content > figure > div > img {
-        width: 700px;
-        height: 700px;
+        width: 65vh;
+        height: 65vh;
     }
     
     .lightbox-content > figure > div > video {
-        width: 700px;
-        height: 700px;
+        width: 65vh;
+        height: 65vh;
     }
-
-    
+    .close-icon-container{
+        width: 85vh;
+    }
 }
 
 /* -------------------------------------------------------------------------------- fin Lightbox--------------------------------------------------------------------------------------- */
@@ -536,5 +541,57 @@ article>figure>figcaption {
 @media screen and (min-width: 1800px) {
     body {
         margin: auto;
+    }
+}
+
+@media screen and (max-width: 1900px) {
+    h1.photographer-header-name {
+        font-size: xx-large;
+        color: #D3573C;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    .photographer-header-infos{
+        padding-left: 3em;
+    }
+    
+    span.photographer-header-country {
+        font-size: x-large;
+        color: #901C1C;
+    }
+    
+    span.photographer-header-tagline {
+        font-size: large;
+        color: #757575
+    }
+
+    .photographer-header {
+        padding-left: 0;
+        grid-template-columns: 0.5fr 1fr 1fr;
+    }
+
+    .image-wrapper{
+        height: 15em;
+        width: 15em;
+    }
+
+    .dropdown-content{
+        width: auto;
+    }
+
+    .media-container{
+        grid-template-columns: repeat(3, 30vw);
+        grid-gap: 2vw;
+    }
+    .media-image, .media-video{
+        width: 30vw;
+        height: 30vw;
+    }
+    .media-container figcaption{
+        width: 30vw;
+    }
+    .likes, .fa-heart{
+        font-size: x-large;
     }
 }
