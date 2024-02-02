@@ -351,9 +351,7 @@ span.photographer-header-tagline {
     font-weight: bold;
     font-size: 1.5em;
     text-align:center;
-    display: flex;
-    justify-content: left;
-    align-items: center;
+    display: block;
 }
 
 .contact_button,

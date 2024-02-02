@@ -18,6 +18,7 @@ const successMessage = document.querySelector('.success-message');
  * @param {string} photographerName - Le nom du photographe à contacter.
  */
 function displayModal(photographerName) {
+    console.log('displayModal');
     modalTitle.textContent ="";
     const modalHeaderTitle = document.createElement('span');
     const modalHeaderSubtitle = document.createElement('span');
@@ -48,6 +49,7 @@ function displayModal(photographerName) {
  * Ferme la boîte modale de contact.
  */
 function closeModal() {
+
     modalDisposal();
     modal.removeEventListener('keydown', modalDisposalEvent);
     closeButton.removeEventListener("click", closeModal);
@@ -57,13 +59,13 @@ function closeModal() {
  * Effectue les opérations nécessaires pour disposer la boîte modale.
  */
 function modalDisposal() {
+
     modal.setAttribute('aria-hidden', 'true');
     body.classList.remove('no-scroll');
     main.classList.remove('overlay');
     header.classList.remove('overlay');
     modal.classList.remove("d-flex");
     modal.classList.add("d-none");
-    openButton.focus();
     document.querySelector("form").reset();
 }
 
@@ -83,8 +85,21 @@ function modalDisposalEvent(event) {
  * @param {Event} event - L'événement de soumission du formulaire.
  */
 form.addEventListener('click', (event) => {
-    if(event.target = validationButton){
+
+    if(event.target === validationButton || event.target.nodeName === 'BUTTON'){
         let valid = "";
+        /**
+         * Affiche un message de validation pour un champ donné.
+         * @param {HTMLInputElement} input - Le champ d'entrée en cours de validation.
+         */
+        function showValid(input) {
+
+            const errorDiv = input.nextElementSibling;
+            errorDiv.textContent = '';
+            input.classList.remove('invalid-border'); // Supprime la bordure rouge
+            errorDiv.classList.add('hidden'); // Cache le message d'erreur
+            valid = true;
+        }
         /**
          * Affiche un message d'erreur pour un champ donné.
          * @param {HTMLInputElement} input - Le champ d'entrée en cours de validation.
@@ -99,29 +114,19 @@ form.addEventListener('click', (event) => {
             valid = false;
         }
 
-        /**
-         * Affiche un message de validation pour un champ donné.
-         * @param {HTMLInputElement} input - Le champ d'entrée en cours de validation.
-         */
-        function showValid(input) {
-            const errorDiv = input.nextElementSibling;
-            errorDiv.textContent = '';
-            errorDiv.classList.add('hidden'); // Cache le message d'erreur
-            input.classList.remove('invalid-border'); // Supprime la bordure rouge
-            input.classList.add('valid-border'); // Ajoute une bordure verte
-            valid = true;
-        }
-
         // Validation du prénom avec regex (exemple : au moins 2 caractères alphabétiques)
         const prenomRegex = /^[A-Za-z]{2,}$/;
-        if (!prenomRegex.test(prenomInput.value)) {
+        if (!prenomRegex.test(prenomInput.value)){
+
             showError(prenomInput, 'Veuillez renseigner un prénom valide.');
         } else {
             showValid(prenomInput);
+
         }
 
         // Validation du nom (même regex que pour le prénom)
         if (!prenomRegex.test(nomInput.value)) {
+
             showError(nomInput, 'Veuillez renseigner un nom valide.');
         } else {
             showValid(nomInput);
@@ -136,12 +141,11 @@ form.addEventListener('click', (event) => {
         }
 
         // Validation du message (exemple : au moins 10 caractères)
-        if (messageInput.value.length < 10) {
+        if (messageInput.value.length < 7) {
             showError(messageInput, 'Veuillez renseigner un message d\'au moins 10 caractères.');
         } else {
             showValid(messageInput);
         }
-
         if (valid) {
             sendDataToServer();
         }
@@ -151,6 +155,14 @@ form.addEventListener('click', (event) => {
 
 function sendDataToServer(){
     // send data to server and then in the callback do the below instructions
+    let champ1 = prenomInput.value;
+    let champ2 = nomInput.value;
+    let champ3 = emailInput.value;
+    let champ4 = messageInput.value;
+    console.log("Valeur du champ prénom :", champ1);
+    console.log("Valeur du champ nom :", champ2);
+    console.log("Valeur du champ e-mail :", champ3);
+    console.log("Valeur du champ message :", champ4);
     form.reset();
     form.classList.toggle('d-none');
     modalTitle.style.display = 'none';
