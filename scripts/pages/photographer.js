@@ -226,7 +226,7 @@ function displayMedia(medias) {
     figure.addEventListener("click", (event) => {
       event.preventDefault(); // Empêche le comportement par défaut du clic pour éviter la navigation
       let targetMediaElement = event.target;
-      if(targetMediaElement.nodeName === 'IMG' || targetMediaElement.nodeName === 'H2'){
+      if(targetMediaElement.nodeName === 'IMG' || targetMediaElement.nodeName === 'H2'|| targetMediaElement.nodeName =='VIDEO'){
         const mediaId = figure.getAttribute("data-mediaId"); // Récupère l'identifiant de la média associée
       //Trouve l'index du média dans la liste des médias
       const lightboxDataIndex = onePhotographer.media.findIndex(

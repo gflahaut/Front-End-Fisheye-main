@@ -349,8 +349,11 @@ span.photographer-header-tagline {
     height: 3em;
     grid-column: 2;
     font-weight: bold;
-    margin: auto;
     font-size: 1.5em;
+    text-align:center;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
 .contact_button,
@@ -541,6 +544,8 @@ article>figure>figcaption {
 @media screen and (min-width: 1800px) {
     body {
         margin: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 }
 

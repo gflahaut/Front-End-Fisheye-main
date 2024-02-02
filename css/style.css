@@ -152,21 +152,30 @@ main{
 @media screen and (max-width: 1400px) {
     .logo{
         height: 50px;
+        margin: 1em 2em 1em 5.5em;
+    }
+    main >*{
+        margin : 0 auto;
     }
 
     header h1{
         font-size: 1.5rem;
         margin-right: 1em;
+        margin: 2em 5.5em 1em 0;
     }
 
     .photographer_section{
         margin-top: 5em;
         gap: 5em;
     }
+    .photographer_section > *{
+        margin: 1em 0 1em 0;
+    }
 
     .photographer_section article h2{
         font-size: 2rem;
     }
+   
     .image-wrapper[data-photographer-name="Nabeel Bradford"] img {
         transform: scale(1.5) translateY(-51px);
     }
